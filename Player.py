@@ -10,6 +10,7 @@ class Player:
 
     def placeShips(self, letter):
         if letter.upper() == 'D':
+            # ask for 1 coordinate, then ask whether horizontal or vertical, confirm it works
             x1 = int(input("enter 1st x coordinate: "))
             y1 = int(input("enter 1st y coordinate: "))
             x2 = int(input("enter 2nd x coordinate: "))
@@ -75,39 +76,10 @@ class Player:
             Grid[x5][y5] = 'A'
             self.boatsRemaining -= 5
 
+    # if orientation.lower() != "vertical" and orientation.lower() != "horizontal":
+    #  return "Please enter a valid orientation"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- # if orientation.lower() != "vertical" and orientation.lower() != "horizontal":
-               #  return "Please enter a valid orientation"
-
-
-
-
-
-   #   print(T[0][0])
+    #   print(T[0][0])
 
     #  T[0][0] = 'H'
     #  print(T[0][0])
