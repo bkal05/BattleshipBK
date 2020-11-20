@@ -18,7 +18,7 @@ class Player:
         for x in self.guessGrid:
             print(x)
 
-    def placeShips(self, ship):
+    def placeShips(self, ship , spaces):
         # pass means the method doesn't do anything, its just a placeholder for the
         # subclasses to overwrite
         pass

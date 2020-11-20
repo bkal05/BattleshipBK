@@ -1,7 +1,7 @@
 from HumanPlayer import HumanPlayer
 from ComputerPlayer import ComputerPlayer
 
-print("Welcome to Battleship!")
+print("Battleship!")
 
 print("Player one place ships now:")
 human = HumanPlayer()
