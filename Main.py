@@ -9,6 +9,7 @@ computer = ComputerPlayer()
 
 human.printGuessGrid()
 human.printShipGrid()
+
 print("Place destroyer")
 human.placeShips("D" , 2)    # letter of ship and its size
 human.printShipGrid()
@@ -24,3 +25,21 @@ human.printShipGrid()
 print("Place aircraft carrier")
 human.placeShips("A" , 5)
 human.printShipGrid()
+
+
+computer.printGuessGrid()
+computer.printShipGrid()
+
+computer.placeShips("D" , 2)
+computer.printShipGrid()
+computer.placeShips("C" , 3)
+computer.printShipGrid()
+computer.placeShips("S" , 3)
+computer.printShipGrid()
+computer.placeShips("B" , 4)
+computer.printShipGrid()
+computer.placeShips("A" , 5)
+computer.printShipGrid()
+
+
+
