@@ -30,13 +30,28 @@ class Player:
         if( horiz == "H"):
             if( col + spaces > 9 ):
                 return False
+            elif (self.shipGrid[row][col] != '~'):
+                return False
             else:
-                return True
+                if (self.shipGrid[row][col] == '~'):
+                    for x in range(spaces):
+                        if (self.shipGrid[row][col + x] != '~'):
+                            return False
+                else:
+                    return True
         else:
             if (row + spaces > 9):
                 return False
+            elif (self.shipGrid[row][col] != '~'):
+                return False
             else:
-                return True
+                if (self.shipGrid[row][col] == '~'):
+                    for x in range(spaces):
+                        if (self.shipGrid[row + x][col] != '~'):
+                            return False
+                else:
+                    return True
+
 
     def placeShipInGrid( self , row , col , horiz , ship , spaces):
         if (horiz == "H"):
