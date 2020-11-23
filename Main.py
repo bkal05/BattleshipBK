@@ -6,7 +6,7 @@ print("Battleship!")
 print("Player one place ships now:")
 human = HumanPlayer()
 computer = ComputerPlayer()
-computer.printShipGrid()
+
 computer.placeShips("D" , 2)
 computer.placeShips("C" , 3)
 computer.placeShips("S" , 3)
