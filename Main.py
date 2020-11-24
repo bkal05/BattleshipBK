@@ -36,17 +36,3 @@ human.printShipGrid()
 
 computer.printGuessGrid()
 computer.printShipGrid()
-
-computer.placeShips("D" , 2)
-computer.printShipGrid()
-computer.placeShips("C" , 3)
-computer.printShipGrid()
-computer.placeShips("S" , 3)
-computer.printShipGrid()
-computer.placeShips("B" , 4)
-computer.printShipGrid()
-computer.placeShips("A" , 5)
-computer.printShipGrid()
-
-
-
