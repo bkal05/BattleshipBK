@@ -1,6 +1,5 @@
 from Player import Player
 from ComputerPlayer import ComputerPlayer
-computer = ComputerPlayer()
 class HumanPlayer( Player ):
 
     def placeShips(self, ship , spaces):  # places ships
@@ -22,7 +21,7 @@ class HumanPlayer( Player ):
             self.placeShipInGrid(row, col, horiz, ship , spaces)
             break
 
-    def GuessShips(self):
+    def GuessShips(self, c):
         x = 0
         while (x < 17):
             self.printGuessGrid()
@@ -31,14 +30,36 @@ class HumanPlayer( Player ):
             if (row > 9 or row < 0 or col > 9 or col < 0):  # if placement is out of bounds
                 print("Out of bounds, try again")
                 continue
-            if (computer.shipGrid[row][col] == '~'):
+            if (c.shipGrid[row][col] == '~'):
                 print("miss")
                 self.guessGrid[row][col] = 'o'
                 continue
             if (self.guessGrid[row][col] == 'o'):
                 print('already guessed there pick new coordinate')
                 continue
-            if (computer.shipGrid[row][col] != '~' | self.guessGrid[row][col] != 'o'):
+            if (c.shipGrid[row][col] == 'D'):
+                print("hit")
+                self.guessGrid[row][col] = 'x'
+                x + 1
+                continue
+            if (c.shipGrid[row][col] == 'C'):
+                print("hit")
+                self.guessGrid[row][col] = 'x'
+                x + 1
+                continue
+            if (c.shipGrid[row][col] == 'S'):
+                print("hit")
+                self.guessGrid[row][col] = 'x'
+                x + 1
+                continue
+
+            if (c.shipGrid[row][col] == 'B'):
+                print("hit")
+                self.guessGrid[row][col] = 'x'
+                x + 1
+                continue
+
+            if (c.shipGrid[row][col] == 'A'):
                 print("hit")
                 self.guessGrid[row][col] = 'x'
                 x + 1
