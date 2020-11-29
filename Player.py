@@ -18,14 +18,14 @@ class Player:
         for x in self.guessGrid:
             print(x)
 
-    def placeShips(self, ship , spaces):
+    def placeShips(self, ship, spaces):
         # pass means the method doesn't do anything, its just a placeholder for the
         # subclasses to overwrite
         pass
 
-    # you will need to add code to this to confirm that there is only water in
-    # spaces you are trying to put the ship in
-    # right now it only confirms if the ship size is within the grid size
+    def makeGuesses(self):
+        pass
+
     def checkLegalPlacement( self , row , col , horiz , ship, spaces ):
         if( horiz == "H"):
             if( col + spaces > 9 ):
@@ -60,3 +60,6 @@ class Player:
         elif (horiz == "V"):
             for r in range(row, row + spaces):
                 self.shipGrid[r][col] = ship
+
+
+
