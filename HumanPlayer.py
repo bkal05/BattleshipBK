@@ -3,6 +3,7 @@ from ComputerPlayer import ComputerPlayer
 
 computer = ComputerPlayer()
 
+hits = 0
 
 class HumanPlayer(Player):
 
@@ -26,7 +27,7 @@ class HumanPlayer(Player):
             break
 
     def GuessShips(self, c):
-        hits = 0
+        global hits
         while (True):
             self.printGuessGrid()
             row = int(input("Enter the row coordinate where you want to guess "))
@@ -34,37 +35,20 @@ class HumanPlayer(Player):
             if (row > 9 or row < 0 or col > 9 or col < 0):  # if placement is out of bounds
                 print("Out of bounds, try again")
                 continue
-            if (c.shipGrid[row][col] == '~'):
-                print("miss")
-                self.guessGrid[row][col] = 'o'
-                break
-            if (self.guessGrid[row][col] == 'o'):
-                print('already guessed there pick new coordinate')
-                continue
-            if (c.shipGrid[row][col] == 'D'):
-                print("hit")
-                self.guessGrid[row][col] = 'x'
-                hits += 1
-                break
-            if (c.shipGrid[row][col] == 'C'):
-                print("hit")
-                self.guessGrid[row][col] = 'x'
-                hits += 1
-                break
-            if (c.shipGrid[row][col] == 'S'):
-                print("hit")
-                self.guessGrid[row][col] = 'x'
-                hits += 1
-                break
-            if (c.shipGrid[row][col] == 'B'):
-                print("hit")
-                self.guessGrid[row][col] = 'x'
-                hits += 1
-                break
-            if (c.shipGrid[row][col] == 'A'):
-                print("hit")
-                self.guessGrid[row][col] = 'x'
-                hits += 1
-                break
-
-
+            else:
+                if (c.shipGrid[row][col] == '~'):
+                    print("miss")
+                    self.guessGrid[row][col] = 'o'
+                    break
+                elif (self.guessGrid[row][col] == 'o' or self.guessGrid[row][col] == 'x'):
+                    print('already guessed there pick new coordinate')
+                    continue
+                else:
+                    print("hit")
+                    self.guessGrid[row][col] = 'x'
+                    hits = hits + 1
+                    print(hits)
+                    if (hits == 17):
+                        print("You Won!!!")
+                        quit()
+                    break
