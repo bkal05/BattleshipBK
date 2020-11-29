@@ -2,6 +2,7 @@ from Player import Player
 
 import random
 
+hits = 0
 
 class ComputerPlayer(Player):
 
@@ -21,7 +22,7 @@ class ComputerPlayer(Player):
             break
 
     def GuessShips(self, p):
-        hits = 0
+        global hits
         while (True):
             row = random.randint(0, 9)
             col = random.randint(0, 9)
@@ -34,11 +35,17 @@ class ComputerPlayer(Player):
                     self.guessGrid[row][col] = 'o'
                     break
 
-                elif (self.guessGrid[row][col] == 'o'):
+                elif (self.guessGrid[row][col] == 'o' or self.guessGrid[row][col] == 'x'):
                     print('already guessed there pick new coordinate')
 
                 else:
                     print("hit")
                     self.guessGrid[row][col] = 'x'
                     hits += 1
+                    if (hits == 17):
+                        print("Computer Won, better luck next time")
+                        quit()
                     break
+
+
+
