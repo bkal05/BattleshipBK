@@ -27,16 +27,6 @@ computer.placeShips("A" , 5)
 computer.printShipGrid()
 
 
-while(True):
+while(True): # while all of the guesses work and the ships are placed
     human.GuessShips(computer)
     computer.GuessShips(human)
-
-
-
-
-
-
-
-
-
-
